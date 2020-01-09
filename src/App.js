@@ -4,7 +4,7 @@ import './App.css';
 const Pagination = React.lazy(() => import('./components/Pagination'));
 const StoryComponent = React.lazy(() => import('./components/StoryComponent'));
 
-const API_END_POINT = 'https://hacker-news.firebaseio.com/v0';
+const API_END_POINT = process.env.REACT_APP_BASE_PATH;
 
 function App() {
   const storiesPerPage = 28;

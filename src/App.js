@@ -35,9 +35,9 @@ const indexOfLastStory = currentPage * storiesPerPage;
 const indexOfFirstStory = indexOfLastStory - storiesPerPage;
 const currentStories = stories.slice(indexOfFirstStory, indexOfLastStory);
 
-const paginate = (pageNumber) => setCurrentPages(pageNumber);
-const previousPage = (pageNumber) => setCurrentPages(pageNumber-1);
-const nextPage = (pageNumber) => setCurrentPages(pageNumber+1);
+const paginate = pageNumber => setCurrentPages(pageNumber);
+const previousPage = pageNumber => setCurrentPages(pageNumber-1);
+const nextPage = pageNumber => setCurrentPages(pageNumber+1);
 
   return (
     <div className="container-fluid">

@@ -1,14 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-//import { render, unmountComponentAtNode  } from '@testing-library/react';
 import App from './App';
-
-// describe('renders learn react link', () => {
-//   const { getByText } = render(<App />);
-//   const storiesPerPage = getByText("28");
-//   expect(storiesPerPage).toBeInTheDocument();
-// });
 
 let container = null;
 beforeEach(() => {
@@ -47,18 +40,5 @@ it("renders story data", async () => {
     render(<App id="22000126" />, container);
   });
 
-  // expect(container.querySelector("summary").textContent).toBe(fakeStory.name);
-  // expect(container.querySelector("strong").textContent).toBe(fakeStory.age);
-  // expect(container.textContent).toContain(fakeStory.address);
-
-  // remove the mock to ensure tests are completely isolated
   global.fetch.mockRestore();
 });
-
-// describe("<App />", () => {
-//   it("properly data fetch", () => {
-//     const { getByText } = render(<App />);
-//     const storiesPerPage = getByText("0");
-//     expect(storiesPerPage.textContent).toEqual("28");
-//   });
-// });

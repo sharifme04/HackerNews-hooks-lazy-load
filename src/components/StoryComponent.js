@@ -11,7 +11,7 @@ const StoryComponent = ({stories}) =>{
     }, [selected]);
 
   return (
-    <div className="gridContainer">
+    <div className="gridContainer columnNumber">
       {stories && stories.map(e =>
         <div
           key={e.id}

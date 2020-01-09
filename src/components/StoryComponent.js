@@ -12,7 +12,7 @@ const StoryComponent = ({stories}) =>{
 
   return (
     <div className="gridContainer">
-      {stories.map(e =>
+      {stories && stories.map(e =>
         <div
           key={e.id}
           className={`card mx-1 my-1 ${!!selected.get(e.id) ? "card-expand" :"card-actual"}`}
@@ -36,7 +36,7 @@ const StoryComponent = ({stories}) =>{
 )};
 
 StoryComponent.propTypes = {
-  stories: PropTypes.array.isRequired
+  stories: PropTypes.array
 }
 
 export default StoryComponent;

@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StoryComponent /> renders 1`] = `
+<div
+  className="gridContainer columnNumber"
+>
+  <div
+    className="card mx-1 my-1 card-actual"
+    key="22000126"
+    onClick={[Function]}
+  >
+    <div
+      className="row no-gutters mx-1 my-1"
+    >
+      <div
+        className="col-md-3 mt-3"
+      >
+        <span
+          style={
+            Object {
+              "fontSize": "20px",
+            }
+          }
+        >
+          ▲
+        </span>
+        <p
+          className="card-text"
+        >
+          Score
+        </p>
+      </div>
+      <div
+        className="col-md-9"
+      >
+        <div
+          className="card-body"
+        >
+          <h6
+            className="card-title"
+          >
+            Work on these things
+          </h6>
+          <p
+            className="card-text"
+          >
+            By: 
+            jger15
+          </p>
+          <p
+            className="card-text"
+          >
+            <small>
+              No text available
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="card mx-1 my-1 card-actual"
+    key="22012831"
+    onClick={[Function]}
+  >
+    <div
+      className="row no-gutters mx-1 my-1"
+    >
+      <div
+        className="col-md-3 mt-3"
+      >
+        <span
+          style={
+            Object {
+              "fontSize": "20px",
+            }
+          }
+        >
+          ▲
+        </span>
+        <p
+          className="card-text"
+        >
+          Score
+        </p>
+      </div>
+      <div
+        className="col-md-9"
+      >
+        <div
+          className="card-body"
+        >
+          <h6
+            className="card-title"
+          >
+            Postman is now charging 50% more for ~5x less
+          </h6>
+          <p
+            className="card-text"
+          >
+            By: 
+            awwstn
+          </p>
+          <p
+            className="card-text"
+          >
+            <small>
+              No text available
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<StoryComponent /> return the default array when there is no data to map through 1`] = `
+<div
+  className="gridContainer columnNumber"
+/>
+`;

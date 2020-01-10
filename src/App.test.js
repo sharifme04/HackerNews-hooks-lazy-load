@@ -1,7 +1,8 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
-import App from './App';
+import React from "react";
+import { unmountComponentAtNode } from "react-dom";
+import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
+import App from "./App";
 
 let container = null;
 beforeEach(() => {
@@ -16,29 +17,71 @@ afterEach(() => {
   container.remove();
   container = null;
 });
-it("renders story data", async () => {
-  const fakeStory = {
+const fakeStory = [
+  {
     by: "jger15",
     descendants: 15,
     id: 22000126,
-    kids:[22001188, 22001236, 22001202, 22001107, 22001179, 22001091, 22001154, 22001106],
+    kids: [
+      22001188,
+      22001236,
+      22001202,
+      22001107,
+      22001179,
+      22001091,
+      22001154,
+      22001106
+    ],
     score: 38,
     time: 1578567242,
     title: "Work on these things",
     type: "story",
-    url: "https://marginalrevolution.com/marginalrevolution/2019/12/work-on-these-things.html"
-  };
+    url:
+      "https://marginalrevolution.com/marginalrevolution/2019/12/work-on-these-things.html"
+  },
+  {
+    by: "awwstn",
+    descendants: 30,
+    id: 22012831,
+    kids: [
+      22013151,
+      22013052,
+      22013186,
+      22013149,
+      22013020,
+      22013011,
+      22013299,
+      22013028,
+      22013270,
+      22013182
+    ],
+    score: 51,
+    time: 1578677960,
+    title: "Postman is now charging 50% more for ~5x less",
+    type: "story",
+    url: "https://capiche.com/q/what-has-changed-in-postmans-new-pricing"
+  }
+];
 
-  jest.spyOn(global, "fetch").mockImplementation(() =>
-    Promise.resolve({
-      json: () => Promise.resolve(fakeStory)
-    })
-  );
+describe("<App />", () => {
+  it("renders story data", async () => {
+    jest.spyOn(global, "fetch").mockImplementation(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(fakeStory)
+      })
+    );
 
-  // Use the asynchronous version of act to apply resolved promises
-  await act(async () => {
-    render(<App id="22000126" />, container);
+    global.fetch.mockRestore();
   });
 
-  global.fetch.mockRestore();
+  test("should render initial layout", () => {
+    const component = shallow(<App />);
+    expect(component.exists()).toBe(true);
+  });
+
+  test("snapshot renders", () => {
+    const component = renderer.create(<App />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

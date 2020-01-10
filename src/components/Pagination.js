@@ -35,22 +35,14 @@ const Pagination = ({
             key={number}
             className={`page-item ${number === currentPage && "active"}`}
           >
-            <button
-              data-testid="current"
-              className="page-link"
-              onClick={() => paginate(number)}
-            >
+            <button className="page-link" onClick={() => paginate(number)}>
               {number}
             </button>
           </li>
         ))}
         {currentPage < pageNumbers.length && (
           <li className="page-item">
-            <button
-              data-testid="next"
-              className="page-link"
-              onClick={() => nextPage(currentPage)}
-            >
+            <button className="page-link" onClick={() => nextPage(currentPage)}>
               Next
             </button>
           </li>

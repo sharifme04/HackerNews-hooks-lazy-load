@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> render 1`] = `
+<div>
+  <ul
+    className="pagination"
+  >
+    <li
+      className="page-item active"
+      key="1"
+    >
+      <button
+        className="page-link"
+        onClick={[Function]}
+      >
+        1
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`<Pagination /> return the default when there is no data to map through 1`] = `
+<div>
+  <ul
+    className="pagination"
+  />
+</div>
+`;

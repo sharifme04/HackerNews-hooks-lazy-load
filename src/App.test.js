@@ -1,5 +1,6 @@
 import React from "react";
 import { unmountComponentAtNode } from "react-dom";
+import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 import App from "./App";
 
@@ -76,5 +77,11 @@ describe("<App />", () => {
   test("should render initial layout", () => {
     const component = shallow(<App />);
     expect(component.exists()).toBe(true);
+  });
+
+  test("snapshot renders", () => {
+    const component = renderer.create(<App />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

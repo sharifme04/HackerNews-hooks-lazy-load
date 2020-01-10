@@ -33,7 +33,7 @@ const StoryComponent = ({ stories }) => {
                   <h6 className="card-title">{e.title}</h6>
                   <p className="card-text">By: {e.by}</p>
                   <p className="card-text">
-                    <small>{e.text}</small>
+                    <small>{e.text ? e.text : "No text available"}</small>
                   </p>
                 </div>
               </div>

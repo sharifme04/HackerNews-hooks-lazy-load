@@ -52,7 +52,7 @@ const nextPage = pageNumber => setCurrentPages(pageNumber+1);
             previousPage={previousPage}
             currentPage={currentPage}
           />
-        <StoryComponent stories={currentStories} />
+         <StoryComponent stories={currentStories} />
       </Suspense>
     </div>
   );

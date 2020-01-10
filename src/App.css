@@ -21,23 +21,37 @@
   overflow: hidden;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
  .columnNumber {
   grid-template-columns: repeat(1, 240px);
   grid-template-rows: repeat(50, 240px);
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 577px) {
   .columnNumber {
    grid-template-columns: repeat(3, 240px);
    grid-template-rows: repeat(30, 240px);
    }
 }
 
+@media only screen and (min-width: 768px) {
+  .columnNumber {
+   grid-template-columns: repeat(4, 240px);
+   grid-template-rows: repeat(30, 240px);
+   }
+}
+
 @media only screen and (min-width: 992px) {
   .columnNumber {
-    grid-template-columns: repeat(7, 240px);;
+    grid-template-columns: repeat(5, 240px);
     grid-template-rows: repeat(10, 240px);
    }
+ }
+
+ @media only screen and (min-width: 1200px) {
+   .columnNumber {
+     grid-template-columns: repeat(7, 240px);
+     grid-template-rows: repeat(10, 240px);
+    }
 }

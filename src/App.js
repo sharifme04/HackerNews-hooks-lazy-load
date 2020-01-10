@@ -11,10 +11,6 @@ function App() {
   const [stories, setStories] = useState([]);
   const [currentPage, setCurrentPages] = useState(1);
 
-  useEffect(() => {
-    fetchStories();
-  }, []);
-
   const fetchStories = async () => {
     let items = [];
     await axios
@@ -32,6 +28,10 @@ function App() {
         });
       });
   };
+
+  useEffect(() => {
+    fetchStories();
+  }, []);
 
   const indexOfLastStory = currentPage * storiesPerPage;
   const indexOfFirstStory = indexOfLastStory - storiesPerPage;

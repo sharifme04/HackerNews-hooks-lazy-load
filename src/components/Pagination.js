@@ -22,7 +22,6 @@ const Pagination = ({
         {currentPage > 1 && (
           <li className="page-item">
             <button
-              data-testid="previous"
               className="page-link"
               onClick={() => previousPage(currentPage)}
             >
